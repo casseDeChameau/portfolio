@@ -1,0 +1,331 @@
+.burger-menu {
+    // ! ceci est le wrapper de l'icone burger + le panel de liens
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    z-index: 20;
+    padding: 0;
+    .burger-ico {
+        @include flex($dir: column, $wrap: nowrap, $jc: space-evenly);
+        border: 2px solid $yellow;
+        position: fixed;
+        z-index: 21;
+        right: 1rem;
+        top: .75rem;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        .stripe {
+            width: 80%;
+            height: 2px;
+            background-color: $yellow;
+            @include trans;
+        }
+        @include trans;
+    }
+    .burger-panel {
+        width: 250px;
+        height: 100%;
+        background-color: white;
+        border-left: 2px solid $yellow;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        transform: translateX(100%);
+        @include trans;
+        .mobile-nav {
+            width: 100%;
+            height: 100%;
+            @include flex;
+            ul {
+                @include flex($dir: column, $ai: flex-end);
+                height: 80%;
+                li {
+                    list-style: none;
+                    padding: 0 1rem 3rem 0;
+                    a {
+                        font-family: $title;
+                        color: $yellow;
+                        text-decoration: none;
+                        font-size: 1.3rem;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+    display:none;
+    @include trans;
+    &.on-click {
+        width: 250px;
+        .burger-ico {
+            align-items: flex-end;
+            transform: rotate(180deg);
+            .stripe {
+                &:nth-child(1) {
+                    width: 75%;
+                    transform-origin: top left;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    width: 0;
+                }
+                &:nth-child(3) {
+                    width: 75%;
+                    transform-origin: bottom left;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .burger-panel {
+            transform: translateX(0%);
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        display: flex;
+    }
+}
+
+.main-nav {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 5rem;
+    background-color: rgba(255, 255, 255, .98);
+    @include flex($jc: space-between);
+    .logo-nom {
+        h2 {
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+    ul {
+        margin: 0;
+        @include flex;
+        li {
+            list-style: none;
+            padding-left: 2rem;
+        }
+    }
+    // ? a séparé du li car inclus "Camille Prost"
+    a {
+        font-family: $title;
+        font-weight: 400;
+        color: $yellow;
+        text-decoration: none;
+        @include trans;
+    }
+    &:hover {
+        // ? ombre et couleurs liens
+        box-shadow: 0 0 .2rem rgba(0, 0, 0, .2);
+        a:hover {
+            color: black;
+        }
+    }
+    @include trans;
+    &.on-scroll {
+        // ? réduit et devient transparente
+        padding: 0.5rem 5rem;
+        opacity: .5;
+        @include trans;
+        h2 {
+            font-size: 1.5rem;
+            @include trans;
+        }
+        &:hover {
+            // ? redevient opaque + ombre
+            opacity: 1;
+            box-shadow: 0 0 .2rem rgba(0, 0, 0, .2);
+        }
+    }
+    @media screen and (min-width: 1500px) {
+        // ? comportement sur des très grands écrans pour rester propotionnel au corps du site
+        width: 1500px;
+        left: unset;
+    }
+    @media screen and (max-width: 1024px) {
+        padding: 1rem;
+        ul {
+            display: none;
+        }
+        &.on-scroll {
+            opacity: 1;
+            padding: .5rem 1rem;
+            box-shadow: 0 0 .2rem rgba(0, 0, 0, .2);
+        }
+    }
+    &.on-gallery {
+        //? disparait vers le haut pour laisser la place à la barre de skills
+        top: -100%;
+        @include trans($time: 1s);
+    }
+}
+
+//* spécifique à la page projet
+.single-project-page {
+    .on-project-scroll {
+        //? Ajout de l'ombre car l'effet on-scroll annulé
+        box-shadow: 0 0 .2rem rgba(0, 0, 0, .2);
+    }
+    .proj-nav {
+        position: relative;
+        @include flex($ai: flex-start);
+        &>* {
+            i {
+                padding: 0 1rem;
+            }
+        }
+        .all-proj {
+            &.on-click {
+                transform: rotate(180DEG);
+                @include trans;
+            }
+        }
+    }
+    .proj-thumbnails {
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        top: -100%;
+        background-color: #fff;
+        ul {
+            width: 100%;
+            @include flex;
+            padding-inline-start: 0px;
+            margin: 0;
+            padding-top: 70px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+            li {
+                position: relative;
+                list-style: none;
+                width: 11.11%;
+                @include flex($ai: flex-end);
+                overflow: hidden;
+                &:not(:first-of-type) {
+                    border-left: 1px solid $yellow;
+                }
+                border-bottom: 5px solid $yellow;
+                .thumb-proj-img {
+                    width: 100%;
+                }
+                //* titre au hover
+                // todo: ajouter effet sur thumb projet en cours
+                .thumb-proj-title {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: $yellow;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    padding: 0rem .5rem;
+                    margin: 0;
+                    opacity: 0;
+                }
+                a:before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba($color: #000000, $alpha: .7);
+                    opacity: 0;
+                }
+                &:hover {
+                    .thumb-proj-title,
+                    a:before {
+                        opacity: 1;
+                        @include trans();
+                    }
+                }
+            }
+        }
+        @include trans;
+        &.on-click {
+            top: 0%;
+            @include trans;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        //? réduction du nom pour conserver proportion de la navbar
+        .logo-nom {
+            h2 {
+                text-transform: uppercase;
+                font-weight: 500;
+                margin: 0;
+                font-size: 1rem;
+            }
+        }
+        //? changement complet de type d'affichage en passant de la barre de thumbnail à une grid sur la page entière + infos visibles
+        .proj-thumbnails {
+            height: 100%;
+            ul {
+                height: 100%;
+                flex-wrap: wrap;
+                padding-top: 50px;
+                li {
+                    width: 33.33%;
+                    height: 33.33%;
+                    border: 1px solid $yellow;
+                    .thumb-proj-img {
+                        min-width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            &.on-click {
+                .thumb-proj-title,
+                a:before {
+                    opacity: 1;
+                    @include trans();
+                }
+            }
+        }
+    }
+}
+
+.contact-nav {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    display: none;
+}
+
+.skills-logos {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    &.on-top {
+        //? ajout d'ombre une fois collé au top pour scroll des projets
+        @include trans;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    }
+    .filters-box {
+        .skills {
+            padding: 0 5rem;
+            background-color: #fff;
+            //? Gestion des boutons .skill (checkbox et svg logo) dans _buttons.scss
+        }
+    }
+    @media screen and (max-width: 992px) {
+        //? pour s'éloigner du burger-icon
+        .filters-box {
+            .skills {
+                padding: 0 3.5rem 0 2rem;
+                .skill-wrapper {
+                    height: 50px;
+                    .skill {
+                        transform: scale(.8);
+                    }
+                }
+            }
+        }
+    }
+}

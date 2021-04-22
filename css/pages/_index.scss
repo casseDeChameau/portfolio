@@ -1,0 +1,169 @@
+html {
+    scroll-behavior: smooth;
+}
+
+// ? general
+body {
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+    // min-width: 100vw;
+    overflow-x: hidden;
+    margin: 0 auto;
+    &,
+    * {
+        &::-webkit-scrollbar {
+            width: 1px;
+            height: 1px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $yellow;
+        }
+    }
+}
+
+.gradient-svg,
+.gradient-svg svg {
+    height: 0;
+    width: 0;
+}
+
+.all-svg-logos {
+    display: none;
+}
+
+//? Section 2
+.competences {
+    border: 2px solid $yellow;
+    margin: 1rem 5rem;
+    padding: 2rem;
+    @include flex($jc: space-evenly, $ai: flex-start);
+    .bloc-field {
+        padding-right: 2rem;
+        h2 {
+            font-size: 1.5rem;
+        }
+        font-family: $title;
+        p {
+            font-style: italic;
+            color: $yellow;
+            font-weight: 400;
+            padding-left: 1.5rem;
+            margin-bottom: .3rem;
+        }
+        ul {
+            list-style: none;
+            li {
+                position: relative;
+                font-weight: 400;
+                font-size: 0.9rem;
+                padding-right: .5rem;
+                &:after {
+                    content: ';'
+                }
+                &.lvl-a {
+                    color: $grey;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        @include flex($dir: column, $ai: flex-start);
+        margin: 1rem;
+        .bloc-field {
+            padding: 0 0 1rem;
+            ul {
+                @include flex($jc: flex-start, $wrap: wrap);
+            }
+        }
+    }
+}
+
+//? Section 3
+.timeline {}
+
+//? Section 4
+.portfolio {
+    position: relative;
+    @include trans($time: .4s);
+    min-height: 100vh;
+    width: 100vw;
+    .project-wrapper {
+        margin: 2rem 1rem 0;
+        .project {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            overflow: hidden;
+            .info {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .8);
+                @include flex($dir: column);
+                color: $yellow;
+                p {
+                    margin: 0;
+                }
+                i {
+                    margin: 1rem;
+                    font-size: 2rem;
+                    &:hover {
+                        color: white;
+                    }
+                }
+                @include trans($time: .5s);
+            }
+            &:nth-child(4n) {
+                .info {
+                    top: 100%;
+                    left: 0;
+                }
+            }
+            &:nth-child(4n+1) {
+                .info {
+                    left: 100%;
+                    top: 0;
+                }
+            }
+            &:nth-child(4n+2) {
+                .info {
+                    top: -100%;
+                    left: 0;
+                }
+            }
+            &:nth-child(4n+3) {
+                .info {
+                    left: -100%;
+                    top: 0;
+                }
+            }
+            &:hover {
+                .info {
+                    @include trans($time: .5s);
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        //? sur mobile; soit en dessous 576 opour s'adapter au xs bootstrap
+        .project-wrapper {
+            .project {
+                &.show-info {
+                    .info {
+                        @include trans($time: .5s);
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

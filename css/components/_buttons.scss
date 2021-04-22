@@ -1,0 +1,230 @@
+//? ======================== boutons-logos //
+// * couleurs de svg
+svg {
+    //? changement de valeurs des variables du gradient radial générique (pour le svg .ai ci dessous 
+    #radial-gradient {
+        --color-stop-1: #423325;
+        --color-stop-2: #1c0a00;
+    }
+    .cls-acs-1,
+    .cls-acs-3,
+    .cls-ajax-1,
+    .cls-jq-1,
+    .cls-jq-2 {
+        fill-rule: evenodd;
+    }
+    .cls-acs-1 {
+        fill: url(#linear-gradient);
+    }
+    .cls-acs-2 {
+        fill: #241d1b;
+    }
+    .cls-acs-3 {
+        fill: #fff;
+    }
+    .cls-ai-1 {
+        // fill: #361c04;            
+        fill: url(#radial-gradient)
+    }
+    .cls-ai-2 {
+        fill: #ff7f18;
+    }
+    .cls-ajax-1 {
+        fill: url(#linear-gradient-ajax);
+    }
+    .cls-ajax-2 {
+        fill: #0c4c75;
+    }
+    .cls-bs-1 {
+        fill: #563d7c;
+    }
+    .cls-bs-2 {
+        fill: #fff;
+    }
+    .cls-css-1 {
+        fill: #2659a5;
+    }
+    .cls-css-2 {
+        fill: #449bd6;
+    }
+    .cls-figma-1 {
+        fill: #0acf83;
+    }
+    .cls-figma-2 {
+        fill: #a259ff;
+    }
+    .cls-figma-3 {
+        fill: #f24e1e;
+    }
+    .cls-figma-4 {
+        fill: #ff7262;
+    }
+    .cls-figma-5 {
+        fill: #1abcfe;
+    }
+    .cls-git {
+        fill: #de4c36;
+    }
+    .cls-gulp-1 {
+        fill: #d34a47;
+    }
+    .cls-gulp-2 {
+        fill: #fff;
+    }
+    .cls-html-1 {
+        fill: #e44d26;
+    }
+    .cls-html-2 {
+        fill: #f16529;
+    }
+    .cls-id-1 {
+        fill: #290a16;
+    }
+    .cls-id-2 {
+        fill: #ff408c;
+    }
+    .cls-js {
+        fill: #f7df1e;
+    }
+    .cls-json-1 {
+        fill: url(#linear-gradient-json-1);
+    }
+    .cls-json-2 {
+        fill: url(#linear-gradient-json-2);
+    }
+    .cls-jq-1 {
+        fill: #1a1918;
+    }
+    .cls-jq-2 {
+        fill: #21609b;
+    }
+    .cls-mariadb {
+        fill: #a57242;
+    }
+    .cls-node-1 {
+        fill: #83cd29;
+    }
+    .cls-node-2 {
+        fill: #404137;
+    }
+    .cls-npm-1 {
+        fill: #cb3837;
+    }
+    .cls-php {
+        fill: #777bb3;
+    }
+    .cls-postman-1 {
+        fill: #ff6c37;
+    }
+    .cls-postman-2 {
+        fill: #fff;
+    }
+    #radial-gradient {
+        --color-stop-1: #34364e;
+        --color-stop-2: #0c0824;
+    }
+    .cls-ps-1 {
+        // fill: #0a0f4e;
+        fill: url(#radial-gradient)
+    }
+    .cls-ps-2 {
+        fill: #31c5f0;
+    }
+    .cls-react-1 {
+        fill: #00d8ff;
+    }
+    .cls-sass {
+        fill: #cd6799;
+    }
+    .cls-sk-1 {
+        fill: #001d26;
+    }
+    .cls-sk-2 {
+        fill: #26c9ff;
+    }
+    .cls-sk-3 {
+        fill: #d9f5ff;
+    }
+    .cls-st-1 {
+        fill: #2684ff;
+    }
+    .cls-st-2 {
+        fill: url(#linear-gradient-st);
+    }
+    .cls-vue-1 {
+        fill: #41b883;
+    }
+    .cls-vue-2 {
+        fill: #35495e;
+    }
+    .cls-vscode-1 {
+        fill: #016ec5;
+    }
+    .cls-wp {
+        fill: #00749a;
+    }
+    .cls-xd-1 {
+        fill: url(#radial-gradient-xd);
+    }
+    .cls-xd-2 {
+        fill: #ff2bc2;
+    }
+}
+
+// * repositionnement de svg
+// vertical
+#sass-icon {
+    transform: translateY(10%);
+}
+
+#ajax-icon {
+    transform: translateY(25%);
+}
+
+// horizontal
+#gulp-icon {
+    transform: translateX(20%);
+}
+
+// * comportement dans la barre de skills-logos
+.skill {
+    @include flex;
+    cursor: pointer;
+    /* checked au clic via js */
+    input {
+        display: none;
+    }
+    /* properties de svg */
+    svg {
+        width: 75px;
+        height: 75px;
+        transform: scale(.60);
+        filter: saturate(0);
+    }
+    //? invert color with bg color if selected
+    &.selected {
+        svg {
+            filter: saturate(100%);
+            animation: .2s pulse;
+            transform: scale(.75);
+            filter: drop-shadow(0 0 2px $yellow);
+            &.json-icon {
+                .cls-json-1 {
+                    fill: url(#linear-gradient-json-2);
+                }
+                .cls-json-2 {
+                    fill: url(#linear-gradient-json-1);
+                }
+            }
+        }
+    }
+    &:hover {
+        transform: scale(1.025);
+        svg {
+            @include trans($time: .2s);
+            filter: saturate(100%);
+        }
+    }
+}
+
+//?==================================== //

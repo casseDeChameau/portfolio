@@ -1,0 +1,22 @@
+//? Fonts
+$title: 'Source Code Pro',
+monospace;
+$text: 'Source Sans Pro',
+sans-serif;
+;
+$exergue: 'Source Serif Pro',
+serif;
+;
+//? Colors
+$yellow: rgb(234, 180, 83);
+$grey: rgb(135, 135, 135);
+$red-action: rgb(221, 75, 57);
+//? Design
+$pad: 1rem;
+//? skill gradient default values
+:root {
+    --color-stop-1: black;
+    --color-stop-2: white;
+    --color-stop-3: grey;
+    --color-stop-4: red;
+}

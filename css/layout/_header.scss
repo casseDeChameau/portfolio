@@ -1,0 +1,93 @@
+.header {
+    padding-top: 4rem;
+    @include flex($jc: flex-start);
+    .bloc-txt {
+        height: 100%;
+        padding: 4rem;
+        width: 50%;
+        h1 {
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid $yellow;
+            font-weight: 600;
+            line-height: 2.8rem;
+            width: 100%;
+        }
+        .presentation {
+            @include flex($ai: flex-start, $jc: flex-start);
+            // text-align: center;
+            .parag {
+                span {
+                    font-family: $exergue;
+                    font-weight: 600;
+                    color: $yellow;
+                    font-style: italic;
+                    font-size: 1.5rem;
+                }
+                width: 33%;
+                padding: $pad;
+                &:nth-of-type(1) {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .bloc-img {
+        @include flex($ai: flex-start);
+        margin: 0 auto;
+        height: 100%;
+        padding: 4rem 0;
+        .frame {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid black;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    @media screen and(max-width: 1024px) {
+        .bloc-txt {
+            height: 100%;
+            padding: 0rem;
+            width: 60%;
+        }
+        .bloc-img {
+            margin: 0 0 0 auto;
+            padding: 1rem;
+            .frame {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        @media screen and(max-width: 900px) {
+            @include flex($dir: column, $jc: flex-start, $ai: center);
+            .bloc-txt {
+                width: 90%;
+                height: unset;
+                order: 2;
+                h1 {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                }
+            }
+            .bloc-img {
+                order: 1;
+                width: 90%;
+                height: unset;
+                margin: 0;
+                .frame {
+                    max-width: 70vmin;
+                    max-height: 70vmin;
+                }
+            }
+            @media screen and(max-width: 500px) {
+                .parag {
+                    display: none;
+                }
+            }
+        }
+    }
+}

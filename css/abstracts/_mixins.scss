@@ -1,0 +1,12 @@
+@mixin flex($dir: row, $wrap: nowrap, $jc: center, $ai: center) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $jc;
+    align-items: $ai;
+    flex: 0 0 auto;
+}
+
+@mixin trans($time: .3s, $func: ease-in-out, $delay: 0s) {
+    transition: all $time $func $delay;
+}
