@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
     <!-- ? ---------------------------------------------    navigation ------------------------------>
     <div class="burger-menu">
         <div class="burger-ico">
@@ -80,100 +80,182 @@
     </header>
 
     <!-- ? ---------------------------------------------    section 2  ------------------------------>
-    <section id="competences" class="competences">
-        <div class="bloc-field">
-            <h2>/Front_end</h2>
-            <p>Langages</p>
-            <ul>
-                <li class="lvl-b">Javascript</li>
-                <li class="lvl-b">HTML 5</li>
-                <li class="lvl-b">CSS 3</li>
-                <li class="lvl-b">WordPress</li>
-            </ul>
-            <p>Méthodologies</p>
-            <ul>
-                <li class="lvl-b">JQuery</li>
-                <li class="lvl-b">Bootstrap</li>
-                <li class="lvl-b">Vue Js</li>
-                <li class="lvl-b">UI/UX</li>
-            </ul>
-            <p>Outils</p>
-            <ul>
-                <li class="lvl-b">Vs Code</li>
-                <li class="lvl-b">Gulp</li>
-                <li class="lvl-b">Sass</li>
-                <li class="lvl-b">Npm</li>
-                <li class="lvl-c">Sketch</li>
-                <li class="lvl-c">Photoshop</li>
-                <li class="lvl-c">Illustrator</li>
-                <li class="lvl-c">inDesign</li>
-            </ul>
-        </div>
-        <div class="bloc-field">
-            <h2>/Back_end</h2>
-            <p>Langages</p>
-            <ul>
-                <li class="lvl-b">Json</li>
-                <li class="lvl-a">PHP</li>
-                <li class="lvl-a">Node Js</li>
-                <li class="lvl-a">Java</li>
-            </ul>
-            <p>Méthodologies</p>
-            <ul>
-                <li class="lvl-a">Spring</li>
-                <li class="lvl-a">UML</li>
-                <li class="lvl-a">MVC</li>
-            </ul>
-            <p>Outils</p>
-            <ul>
-                <li class="lvl-a">PHP MyAdmin</li>
-                <li class="lvl-a">Maria DB</li>
-                <li class="lvl-a">Postman</li>
-                <li class="lvl-a">Visual Paradigm</li>
-            </ul>
-        </div>
-        <div class="bloc-field">
-            <h2>/Team_working</h2>
-            <p>Langages</p>
-            <ul>
-                <li class="lvl-c">Français</li>
-                <li class="lvl-b">Anglais</li>
-                <li class="lvl-a">Néerlandais</li>
-            </ul>
-            <p>Méthodologies</p>
-            <ul>
-                <li class="lvl-a">Scrum</li>
-                <li class="lvl-a">Agile</li>
-            </ul>
-            <p>Outils</p>
-            <ul>
-                <li class="lvl-b">Git</li>
-                <li class="lvl-a">SourceTree</li>
-                <li class="lvl-c">Slack</li>
-                <li class="lvl-c">Drive</li>
-            </ul>
-            <p>État_d_esprit</p>
-            <ul>
-                <li class="lvl-b">Proactif</li>
-                <li class="lvl-b">Persévérent</li>
-                <li class="lvl-b">Calme</li>
-                <li class="lvl-b">Volontaire</li>
-                <li class="lvl-b">Curieux</li>
-                <li class="lvl-b">Dynamique</li>
-            </ul>
-            <p>Autre</p>
-            <ul>
-                <li class="lvl-c">Permis B</li>
-            </ul>
+    <section id="competences" class="competences-wrapper">
+        <div class="competences-container">
+            <div class="competences">
+                <div class="bloc-field">
+                    <h2>/Front_end</h2>
+                    <p>Langages</p>
+                    <ul>
+                        <li class="lvl-b">Javascript</li>
+                        <li class="lvl-b">HTML 5</li>
+                        <li class="lvl-b">CSS 3</li>
+                        <li class="lvl-b">WordPress</li>
+                    </ul>
+                    <p>Méthodologies</p>
+                    <ul>
+                        <li class="lvl-b">JQuery</li>
+                        <li class="lvl-b">Bootstrap</li>
+                        <li class="lvl-b">Vue Js</li>
+                        <li class="lvl-b">UI/UX</li>
+                    </ul>
+                    <p>Outils</p>
+                    <ul>
+                        <li class="lvl-b">Vs Code</li>
+                        <li class="lvl-b">Gulp</li>
+                        <li class="lvl-b">Sass</li>
+                        <li class="lvl-b">Npm</li>
+                        <li class="lvl-c">Sketch</li>
+                        <li class="lvl-c">Photoshop</li>
+                        <li class="lvl-c">Illustrator</li>
+                        <li class="lvl-c">inDesign</li>
+                    </ul>
+                </div>
+                <div class="bloc-field">
+                    <h2>/Back_end</h2>
+                    <p>Langages</p>
+                    <ul>
+                        <li class="lvl-b">Json</li>
+                        <li class="lvl-a">PHP</li>
+                        <li class="lvl-a">Node Js</li>
+                        <li class="lvl-a">Java</li>
+                    </ul>
+                    <p>Méthodologies</p>
+                    <ul>
+                        <li class="lvl-a">Spring</li>
+                        <li class="lvl-a">UML</li>
+                        <li class="lvl-a">MVC</li>
+                    </ul>
+                    <p>Outils</p>
+                    <ul>
+                        <li class="lvl-a">PHP MyAdmin</li>
+                        <li class="lvl-a">Maria DB</li>
+                        <li class="lvl-a">Postman</li>
+                        <li class="lvl-a">Visual Paradigm</li>
+                    </ul>
+                </div>
+                <div class="bloc-field">
+                    <h2>/Team_working</h2>
+                    <p>Langages</p>
+                    <ul>
+                        <li class="lvl-c">Français</li>
+                        <li class="lvl-b">Anglais</li>
+                        <li class="lvl-a">Néerlandais</li>
+                    </ul>
+                    <p>Méthodologies</p>
+                    <ul>
+                        <li class="lvl-a">Scrum</li>
+                        <li class="lvl-a">Agile</li>
+                    </ul>
+                    <p>Outils</p>
+                    <ul>
+                        <li class="lvl-b">Git</li>
+                        <li class="lvl-a">SourceTree</li>
+                        <li class="lvl-c">Slack</li>
+                        <li class="lvl-c">Drive</li>
+                    </ul>
+                    <p>État_d_esprit</p>
+                    <ul>
+                        <li class="lvl-b">Proactif</li>
+                        <li class="lvl-b">Persévérent</li>
+                        <li class="lvl-b">Calme</li>
+                        <li class="lvl-b">Volontaire</li>
+                        <li class="lvl-b">Curieux</li>
+                        <li class="lvl-b">Dynamique</li>
+                    </ul>
+                    <p>Autre</p>
+                    <ul>
+                        <li class="lvl-c">Permis B</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="timeline" class="timeline">
+                <!--TODO : installer un plugin timeline  -->
+                <div class="timeline-plug-in" data-spy="scroll" data-target="#navbar-example">
+                    <div class="wrapper">
+                        <nav class="nav__wrapper" id="navbar-example">
+                            <ul class="nav">
+                                <li role="presentation" class="active">
+                                    <a href="#section1">
+                                        <span class="nav__counter">Aujourd'hui</span>
+                                        <h3 class="nav__title">Programmation</h3>
+                                        <p class="nav__body">
+                                            <strong>Certif. Développeur Front-End</strong><br>
+                                            <em>Bruxelles Formation, 2020-2021</em>
+                                            <br>Pratique complète des langages de programmation Front-End.
+                                        </p>
+                                        <p class="nav__body">
+                                            <strong>Certif. Programmation Java</strong><br>
+                                            <em>Bruxelles Formation, 2019</em>
+                                            <br>Apprentissage théorique de Java et POO.
+                                        </p>
+                                        <span class="nav__counter nav__counter-down">2019</span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#section2">
+                                        <span class="nav__counter">Aujourd'hui</span>
+                                        <h3 class="nav__title">Graphisme</h3>
+                                        <p class="nav__body">
+                                            <strong>Freelance</strong>
+                                            <br><em>depuis 2008</em>
+                                            <br>Illustrations, infographie, webdesign, app design, formations, fresques, décorations. Gestion de projet. Relation client.
+                                        </p>
+                                        <p class="nav__body">
+                                            <strong>Infographiste</strong>
+                                            <br><em>Média Animation, Bruxelles, 2017-2018</em>
+                                            <br>Conception, création et mise à jour graphique de supports éditoriaux et numériques.
+                                        </p>
+                                        <p class="nav__body">
+                                            <strong>Ass. Responsable Communication</strong>
+                                            <br><em>TER SNCF PACA, Marseille, 2013-2014</em>
+                                            <br>Stratégies de communication marketing, conception graphique des supports
+                                        </p>
+                                        <span class="nav__counter nav__counter-down">2008</span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#section3">
+                                        <span class="nav__counter">2014</span>
+                                        <h3 class="nav__title">Études</h3>
+                                        <p class="nav__body">
+                                            <strong>Master Gestion Projet Multimédia</strong>
+                                            <br><em>Ingémédia, Université de Toulon</em>
+                                            <br>Stratégies de communication marketing, conception graphique des supports.
+                                        </p>
+                                        <p class="nav__body">
+                                            <strong>Licence Arts Appliqués</strong>
+                                            <br><em>Université de Nîmes</em>
+                                            <br>Option Arts et Médiation culturelle.
+                                        </p>
+                                        <p class="nav__body">
+                                            <strong>BTS Expression Visuelle</strong>
+                                            <br><em>Lycée M.Curie, Marseille</em>
+                                            <br>Option Espace Communication Événementiel
+                                        </p>
+                                        <p class="nav__body">
+                                            <strong>BT Dessinateur Maquettiste</strong>
+                                            <br><em>Lycée M.Curie, Marseille</em>
+                                            <br>Option Publicité
+                                        </p>
+                                        <span class="nav__counter nav__counter-down">2013</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <section class="section section1" id="section1">
+                        </section>
+                        <section class="section section2" id="section2">
+                        </section>
+                        <section class="section section3" id="section3">
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ? ---------------------------------------------    section 3 ------------------------------>
-    <section id="timeline" class="timeline">
-        <!--TODO : installer un plugin timeline  -->
-    </section>
-
-    <!-- ? ---------------------------------------------    section 4 ------------------------------>
     <section id="portfolio" class="portfolio">
         <div class="skills-logos">
             <div class="filters-box">
@@ -414,7 +496,7 @@
         </div>
     </section>
 
-    <!-- ? ---------------------------------------------    section 5 ------------------------------>
+    <!-- ? ---------------------------------------------    section 4 ------------------------------>
     <footer class="footer">
         <a href="#" title="linkedin"><i class="fab fa-linkedin-in"></i></a>
         <a href="#" title="github"><i class="fab fa-github"></i></a>
@@ -779,11 +861,15 @@
         </svg>
 
     </div>
+    <!-- ? ---------------------------------------------    SCRIPTS ------------------------------>
+    <!-- * Jquery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <!-- * timeline -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- * js -->
+    <script src="js/scripts.js"></script>
+    <script src="js/skills-filter.js"></script>
 </body>
-<!-- * Jquery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- * js -->
-<script src="js/scripts.js"></script>
-<script src="js/skills-filter.js"></script>
 
 </html>

@@ -1,9 +1,9 @@
 .header {
-    padding-top: 4rem;
-    @include flex($jc: flex-start);
+    position: relative;
+    padding: 7rem 5rem;
+    @include flex($jc: space-between);
     .bloc-txt {
         height: 100%;
-        padding: 4rem;
         width: 50%;
         h1 {
             padding-bottom: 1.5rem;
@@ -14,7 +14,6 @@
         }
         .presentation {
             @include flex($ai: flex-start, $jc: flex-start);
-            // text-align: center;
             .parag {
                 span {
                     font-family: $exergue;
@@ -35,7 +34,6 @@
         @include flex($ai: flex-start);
         margin: 0 auto;
         height: 100%;
-        padding: 4rem 0;
         .frame {
             width: 400px;
             height: 400px;
@@ -48,14 +46,14 @@
         }
     }
     @media screen and(max-width: 1024px) {
+        padding: 7rem 4rem 0rem;
         .bloc-txt {
+            padding-top: 1rem;
             height: 100%;
-            padding: 0rem;
             width: 60%;
         }
         .bloc-img {
-            margin: 0 0 0 auto;
-            padding: 1rem;
+            // margin: 0 0 0 auto;
             .frame {
                 width: 300px;
                 height: 300px;

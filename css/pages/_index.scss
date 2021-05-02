@@ -5,9 +5,6 @@ html {
 // ? general
 body {
     position: relative;
-    max-height: 100%;
-    max-width: 100%;
-    // min-width: 100vw;
     overflow-x: hidden;
     margin: 0 auto;
     &,
@@ -20,6 +17,7 @@ body {
             background-color: $yellow;
         }
     }
+    // background-color: antiquewhite;
 }
 
 .gradient-svg,
@@ -33,63 +31,143 @@ body {
 }
 
 //? Section 2
-.competences {
-    border: 2px solid $yellow;
-    margin: 1rem 5rem;
-    padding: 2rem;
-    @include flex($jc: space-evenly, $ai: flex-start);
-    .bloc-field {
-        padding-right: 2rem;
-        h2 {
-            font-size: 1.5rem;
-        }
-        font-family: $title;
-        p {
-            font-style: italic;
-            color: $yellow;
-            font-weight: 400;
-            padding-left: 1.5rem;
-            margin-bottom: .3rem;
-        }
-        ul {
-            list-style: none;
-            li {
-                position: relative;
-                font-weight: 400;
-                font-size: 0.9rem;
-                padding-right: .5rem;
-                &:after {
-                    content: ';'
+.competences-wrapper {
+    width: 100%;
+    padding: 1rem 5rem;
+    .competences-container {
+        width: 100%;
+        margin-bottom: 2rem;
+        @include flex($dir: column, $jc: flex-start, $ai: flex-start);
+        .competences {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 70px;
+            background-color: white;
+            width: 100%;
+            height: 85vh;
+            left: 0;
+            padding: 2rem;
+            border: 2px solid $yellow;
+            //* bloc-textes:
+            @include flex($jc: space-evenly, $ai: flex-start, $wrap: wrap);
+            .bloc-field {
+                padding-right: 2rem;
+                h2 {
+                    margin: .2rem;
+                    font-size: 1.5rem;
                 }
-                &.lvl-a {
-                    color: $grey;
+                font-family: $title;
+                p {
+                    font-style: italic;
+                    color: $yellow;
+                    font-weight: 400;
+                    padding-left: 1.5rem;
+                    margin-bottom: .3rem;
+                }
+                ul {
+                    list-style: none;
+                    li {
+                        position: relative;
+                        font-weight: 400;
+                        font-size: 0.9rem;
+                        padding-right: .5rem;
+                        &:after {
+                            content: ';'
+                        }
+                        &.lvl-a {
+                            color: $grey;
+                        }
+                    }
+                }
+                @include trans($time: .3s, $delay: .5s);
+            }
+            @include trans($time: .8s);
+        }
+        .timeline {
+            overflow: scroll;
+            width: 50%;
+            right: 0;
+            padding: 2rem;
+            padding-bottom: 0;
+            margin-top: 500px;
+            align-self: flex-end;
+            //? configuration de .timeline-plug-in dans _slider
+        }
+    }
+    @include trans();
+    &.next-timeline {
+        .competences-container {
+            .competences {
+                width: 50%;
+                //* bloc-textes:
+                justify-content: flex-start;
+                align-items: center;
+                .bloc-field {
+                    width: 100%;
+                    padding: 0;
+                    * {
+                        margin: 0;
+                        font-size: 0.7rem;
+                    }
+                    h2 {
+                        font-size: 1.3rem;
+                    }
+                    ul {
+                        @include flex($jc: flex-start, $wrap: wrap);
+                    }
+                    @include trans($time: .3s, $delay: .5s);
+                }
+            }
+            .timeline.show-timeline-nav {
+                .timeline-plug-in,
+                .wrapper,
+                .nav li {
+                    width: 100%;
+                    overflow: unset;
+                    opacity: 1;
                 }
             }
         }
     }
     @media screen and (max-width: 1200px) {
-        @include flex($dir: column, $ai: flex-start);
-        margin: 1rem;
-        .bloc-field {
-            padding: 0 0 1rem;
-            ul {
-                @include flex($jc: flex-start, $wrap: wrap);
+        .competences {
+            @include flex($dir: column, $ai: flex-start);
+            margin: 1rem 4rem 2rem;
+            .bloc-field {
+                padding: 0 0 1rem;
+                ul {
+                    @include flex($jc: flex-start, $wrap: wrap);
+                }
+            }
+            @media screen and (max-width:900px) {
+                margin: 1rem 1rem 2rem;
             }
         }
+        .timeline {}
     }
 }
 
-//? Section 3
-.timeline {}
+.after-timeline {
+    &.competences-wrapper {
+        position: relative;
+        .competences {}
+        .timeline {}
+    }
+    &.portfolio {
+        position: relative;
+        visibility: visible;
+    }
+}
 
 //? Section 4
 .portfolio {
-    position: relative;
+    // visibility: hidden;
     @include trans($time: .4s);
     min-height: 100vh;
     width: 100vw;
+    //? les skill (boutons) sont dans _buttons.scss
     .project-wrapper {
-        margin: 2rem 1rem 0;
+        margin: 2rem 1rem;
         .project {
             position: relative;
             img {

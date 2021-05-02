@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO wp dynamisation -->
     <title>Hubscale - Camille Prost</title>
     <link rel="icon" href="img/favicon_casseDeChameau1.ico" />
     <!-- * font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <!-- * bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
     <!-- * animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
     <!-- * css -->
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -33,8 +34,8 @@
         <div class="logo-nom">
             <h2><a href="index.html">Camille Prost</a></h2>
         </div>
-        <!-- todo: mettre un lien suivant et précédent (peut être ailleurs) -->
         <div class="proj-nav">
+            <!-- TODO wp dynamisation -->
             <a href="#single-project.html">
                 <div class="prev-proj">
                     <i class="fas fa-arrow-left"></i>
@@ -45,6 +46,7 @@
                     <i class="fas fa-arrow-down"></i>
                 </div>
             </a>
+            <!-- TODO wp dynamisation -->
             <a href="#single-project.html">
                 <div class="next-proj">
                     <i class="fas fa-arrow-right"></i>
@@ -54,6 +56,7 @@
     </nav>
     <div class="proj-thumbnails">
         <ul>
+            <!-- TODO wp dynamisation boucle et post -->
             <li>
                 <img class="thumb-proj-img" src="img/thumbnail_wp-cepera.png" alt="projet thumbnail">
                 <a href="#">
@@ -122,10 +125,10 @@
     <section class="proj-img">
         <div class="computer-wrapper">
             <svg class="computer-svg" viewBox="0 0 319.48 196.74">
-                <!-- todo: wp img thumbnail à injecter en href de l'img -->
                 <!-- ! NEVER EVER CHANGE ANY VALUE IN THIS SVG -->
                 <defs>
                     <pattern id="screen-img" patternUnits="userSpaceOnUse" width="312" height="180">
+                        <!-- TODO wp dynamisation -->
                         <image xlink:href="img/thumbnail_site-hubscale.png" x="32.4" y="16" width="255"
                             height="163.0714">
                     </pattern>
@@ -140,8 +143,13 @@
             </svg>
         </div>
         <div class="picture-wrapper">
+            <!-- TODO wp dynamisation -->
+
             <div class="proj-pic">
                 <img src="img/proj-pics/hubscale.png" alt="project pics">
+            </div>
+            <div class="proj-pic">
+                <img src="img/thumbnail_site-responsible-drinking.png" alt="project pics">
             </div>
         </div>
     </section>
@@ -153,13 +161,20 @@
                 <h3 class="proj-subtitle">Reproduction de site</h3>
                 <div class="proj-infos">
                     <p class="proj-date">2021</p>
+                    <!-- TODO wp dynamisation avec condition taxo -->
                     <a href="#">
+                        <i class="fab fa-behance"></i>
+                        <div class="link-info">
+                            <p>Voir le graphisme</p>
+                        </div>
+                    </a>
+                    <a class="active" href="#">
                         <i class="fab fa-github"></i>
                         <div class="link-info">
                             <p>Voir le code</p>
                         </div>
                     </a>
-                    <a href="#">
+                    <a class="active" href="#">
                         <i class="fas fa-globe"></i>
                         <div class="link-info">
                             <p>Voir le site</p>
@@ -169,16 +184,24 @@
             </div>
             <div class="proj-txt-body">
                 <p class="proj-desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis rerum repellat quod assumenda iure iste nesciunt, vel porro doloribus incidunt. Consequatur minima, aliquam iure fugit soluta aperiam a optio. Sequi. Lorem ipsum, dolor. Lorem ipsum dolor
-                    sit amet consectetur adipisicing elit. Veritatis rerum repellat quod assumenda iure iste nesciunt, vel porro doloribus incidunt. Consequatur minima, aliquam iure fugit soluta aperiam a optio. Sequi. Lorem ipsum, dolor. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Veritatis rerum repellat quod assumenda iure iste nesciunt, vel porro doloribus incidunt. Consequatur minima, aliquam iure fugit soluta aperiam a optio. Sequi. Lorem ipsum, dolor.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis rerum repellat quod assumenda iure iste nesciunt, vel porro doloribus incidunt. Consequatur minima, aliquam iure fugit soluta aperiam a optio. Sequi.
                 </p>
                 <div class="proj-skills">
-                    <div class="proj-skill"><i class="fab fa-html5"></i></div>
-                    <div class="proj-skill"><i class="fab fa-css3-alt"></i></div>
-                    <div class="proj-skill"><i class="fab fa-sass"></i></div>
-                    <div class="proj-skill"><i class="fab fa-angular"></i></div>
-                    <div class="proj-skill"><i class="fab fa-gulp"></i></div>
+                    <div class="proj-skill">
+                        <a href=""><img src="img/skills-svg/html.svg" alt="html"></a>
+                    </div>
+                    <div class="proj-skill">
+                        <a href=""><img src="img/skills-svg/css.svg" alt="css"></a>
+                    </div>
+                    <div class="proj-skill">
+                        <a href=""><img src="img/skills-svg/sass.svg" alt="sass"></a>
+                    </div>
+                    <div class="proj-skill">
+                        <a href=""><img src="img/skills-svg/angular.svg" alt="angular"></a>
+                    </div>
+                    <div class="proj-skill">
+                        <a href=""><img src="img/skills-svg/gulp2.svg" alt="gulp"></a>
+                    </div>
                 </div>
                 <div class="proj-fields">
                     <div class="end-fields">
@@ -186,12 +209,21 @@
                         <span>/Back-End</span>
                     </div>
                     <div class="work-fields">
-                        <span class="">Graphic Design</span>
-                        <span class="work-done">Web Design</span>
-                        <span class="work-done">Content Managment</span>
-                        <span class="work-done">Programmation</span>
-                        <span class="">DataBase</span>
+                        <a href=""><span class="">Graphic Design</span></a>
+                        <a href=""><span class="work-done">Web Design</span></a>
+                        <a href=""><span class="work-done">Content Managment</span></a>
+                        <a href=""><span class="work-done">Programmation</span></a>
+                        <a href=""><span class="">DataBase</span></a>
                     </div>
+                </div>
+                <!-- todo: ajout nomenclature  -->
+                <div class="fields-map-btn">
+                    <p>?</p>
+                </div>
+                <div class="fields-map">
+                    <div class="end-part"></div>
+                    <div class="work-part"></div>
+                    <div class="skill-part"></div>
                 </div>
             </div>
         </div>
@@ -203,11 +235,11 @@
         <a href="#" title="behance"><i class="fab fa-behance"></i></a>
         <a href="#" title="instagram"><i class="fab fa-instagram"></i></a>
     </footer>
-
+    <!-- ? ---------------------------------------------    SCRIPTS ------------------------------>
+    <!-- * Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- * js -->
+    <script src="js/scripts.js"></script>
 </body>
-<!-- * Jquery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- * js -->
-<script src="js/scripts.js"></script>
 
 </html>
