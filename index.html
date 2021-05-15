@@ -7,11 +7,11 @@
     <title>CAMILLE PROST - FrontEnd Dev</title>
     <link rel="icon" href="img/favicon_casseDeChameau1.ico" />
     <!-- * font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- * bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- * animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
     <!-- * css -->
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -44,14 +44,26 @@
             <li><a href="#portfolio">réalisations</a></li>
         </ul>
     </nav>
-    <nav class="contact-nav">
-        <!-- todo : ajouter icone font awesome -->
-        <a href="tel:+32471223456" title="+32(0)471 22 34 56"><i class="fas fa-phone"></i><span>+32(0)471 22 34
-                56</span></a>
-        <a href="mailto:cprost.com@gmail.com" title="cprost.com@gmail.com"><i
-                class="fas fa-envelope"></i><span>cprost.com@gmail.com</span></a>
-    </nav>
 
+    <nav class="gooey-menu">
+        <input type="checkbox" href="#" class="gooey-menu-checkbox" name="gooey-menu-checkbox" id="gooey-menu-checkbox" />
+        <label class="gooey-menu-button" for="gooey-menu-checkbox">
+            <i class="far fa-comment-dots"></i>
+        </label>
+
+        <a href="tel:+32471223456" title="+32(0)471 22 34 56" class="gooey-menu-item"> <i class="fas fa-phone"></i>
+        </a>
+        <a href="mailto:cprost.com@gmail.com" title="cprost.com@gmail.com" class="gooey-menu-item"> <i class="fa fa-envelope"></i> </a>
+        <a href="https://github.com/casseDeChameau" title="GitHub" class="gooey-menu-item" target="_blank"> <i class="fab fa-github"></i></i>
+        </a>
+        <a href="https://www.behance.net/cprost" title="Behance" class="gooey-menu-item" target="_blank">
+            <i class="fab fa-behance"></i></i>
+        </a>
+        <a href="https://www.linkedin.com/in/cpj2ee/" title="Linkedin" class="gooey-menu-item" target="_blank"> <i class="fab fa-linkedin-in"></i> </a>
+        <a href="https://www.google.com/maps/place/Moeder+Lambic+Fontainas/@50.845101,4.3469733,15z/data=!4m2!3m1!1s0x0:0xdc0c933eb153970b?sa=X&ved=2ahUKEwiPjNabw8vwAhX4A2MBHdR7ALMQ_BIwG3oECEsQBQ" title="On se boit une bière ?" class="gooey-menu-item" target="_blank">
+            <i class="fas fa-beer"></i></a>
+
+    </nav>
     <!-- ? ---------------------------------------------    section 1 ------------------------------>
     <header class="header" id="header">
         <div class="bloc-txt">
@@ -170,84 +182,86 @@
                 </div>
             </div>
             <div id="timeline" class="timeline">
-                <!--TODO : installer un plugin timeline  -->
                 <div class="timeline-plug-in" data-spy="scroll" data-target="#navbar-example">
+                    <nav class="nav__wrapper" id="navbar-example">
+                        <ul class="nav">
+                            <li role="presentation" class="active">
+                                <a href="#section1">
+                                    <span class="nav__counter">Aujourd'hui</span>
+                                    <h3 class="nav__title">Programmation</h3>
+                                    <p class="nav__body">
+                                        <strong>Certif. Développeur Front-End</strong><br>
+                                        <em>Bruxelles Formation, 2020-2021</em>
+                                        <br>Pratique complète des langages de programmation Front-End.
+                                    </p>
+                                    <p class="nav__body">
+                                        <strong>Certif. Programmation Java</strong><br>
+                                        <em>Bruxelles Formation, 2019</em>
+                                        <br>Apprentissage théorique de Java et POO.
+                                    </p>
+                                    <span class="nav__counter nav__counter-down">2019</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#section2">
+                                    <span class="nav__counter">Aujourd'hui</span>
+                                    <h3 class="nav__title">Graphisme</h3>
+                                    <p class="nav__body">
+                                        <strong>Freelance</strong>
+                                        <br><em>depuis 2008</em>
+                                        <br>Illustrations, infographie, webdesign, app design, formations, fresques, décorations. Gestion de projet. Relation client.
+                                    </p>
+                                    <p class="nav__body">
+                                        <strong>Infographiste</strong>
+                                        <br><em>Média Animation, Bruxelles, 2017-2018</em>
+                                        <br>Conception, création et mise à jour graphique de supports éditoriaux et numériques.
+                                    </p>
+                                    <p class="nav__body">
+                                        <strong>Ass. Responsable Communication</strong>
+                                        <br><em>TER SNCF PACA, Marseille, 2013-2014</em>
+                                        <br>Stratégies de communication marketing, conception graphique des supports
+                                    </p>
+                                    <span class="nav__counter nav__counter-down">2008</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#section3">
+                                    <span class="nav__counter">2014</span>
+                                    <h3 class="nav__title">Études</h3>
+                                    <p class="nav__body">
+                                        <strong>Master Gestion Projet Multimédia</strong>
+                                        <br><em>Ingémédia, Université de Toulon</em>
+                                        <br>Stratégies de communication marketing, conception graphique des supports.
+                                    </p>
+                                    <p class="nav__body">
+                                        <strong>Licence Arts Appliqués</strong>
+                                        <br><em>Université de Nîmes</em>
+                                        <br>Option Arts et Médiation culturelle.
+                                    </p>
+                                    <p class="nav__body">
+                                        <strong>BTS Expression Visuelle</strong>
+                                        <br><em>Lycée M.Curie, Marseille</em>
+                                        <br>Option Espace Communication Événementiel
+                                    </p>
+                                    <p class="nav__body">
+                                        <strong>BT Dessinateur Maquettiste</strong>
+                                        <br><em>Lycée M.Curie, Marseille</em>
+                                        <br>Option Publicité
+                                    </p>
+                                    <span class="nav__counter nav__counter-down">2013</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                     <div class="wrapper">
-                        <nav class="nav__wrapper" id="navbar-example">
-                            <ul class="nav">
-                                <li role="presentation" class="active">
-                                    <a href="#section1">
-                                        <span class="nav__counter">Aujourd'hui</span>
-                                        <h3 class="nav__title">Programmation</h3>
-                                        <p class="nav__body">
-                                            <strong>Certif. Développeur Front-End</strong><br>
-                                            <em>Bruxelles Formation, 2020-2021</em>
-                                            <br>Pratique complète des langages de programmation Front-End.
-                                        </p>
-                                        <p class="nav__body">
-                                            <strong>Certif. Programmation Java</strong><br>
-                                            <em>Bruxelles Formation, 2019</em>
-                                            <br>Apprentissage théorique de Java et POO.
-                                        </p>
-                                        <span class="nav__counter nav__counter-down">2019</span>
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#section2">
-                                        <span class="nav__counter">Aujourd'hui</span>
-                                        <h3 class="nav__title">Graphisme</h3>
-                                        <p class="nav__body">
-                                            <strong>Freelance</strong>
-                                            <br><em>depuis 2008</em>
-                                            <br>Illustrations, infographie, webdesign, app design, formations, fresques, décorations. Gestion de projet. Relation client.
-                                        </p>
-                                        <p class="nav__body">
-                                            <strong>Infographiste</strong>
-                                            <br><em>Média Animation, Bruxelles, 2017-2018</em>
-                                            <br>Conception, création et mise à jour graphique de supports éditoriaux et numériques.
-                                        </p>
-                                        <p class="nav__body">
-                                            <strong>Ass. Responsable Communication</strong>
-                                            <br><em>TER SNCF PACA, Marseille, 2013-2014</em>
-                                            <br>Stratégies de communication marketing, conception graphique des supports
-                                        </p>
-                                        <span class="nav__counter nav__counter-down">2008</span>
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#section3">
-                                        <span class="nav__counter">2014</span>
-                                        <h3 class="nav__title">Études</h3>
-                                        <p class="nav__body">
-                                            <strong>Master Gestion Projet Multimédia</strong>
-                                            <br><em>Ingémédia, Université de Toulon</em>
-                                            <br>Stratégies de communication marketing, conception graphique des supports.
-                                        </p>
-                                        <p class="nav__body">
-                                            <strong>Licence Arts Appliqués</strong>
-                                            <br><em>Université de Nîmes</em>
-                                            <br>Option Arts et Médiation culturelle.
-                                        </p>
-                                        <p class="nav__body">
-                                            <strong>BTS Expression Visuelle</strong>
-                                            <br><em>Lycée M.Curie, Marseille</em>
-                                            <br>Option Espace Communication Événementiel
-                                        </p>
-                                        <p class="nav__body">
-                                            <strong>BT Dessinateur Maquettiste</strong>
-                                            <br><em>Lycée M.Curie, Marseille</em>
-                                            <br>Option Publicité
-                                        </p>
-                                        <span class="nav__counter nav__counter-down">2013</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <!-- ? jugule le changement d'état de la nav, la 4e section offre du temps de scroll avant remonté du portfolio -->
                         <section class="section section1" id="section1">
                         </section>
                         <section class="section section2" id="section2">
                         </section>
                         <section class="section section3" id="section3">
+                        </section>
+                        <section class="section section4" id="section4">
                         </section>
                     </div>
                 </div>
@@ -504,7 +518,30 @@
         <a href="#" title="instagram"><i class="fab fa-instagram"></i></a>
     </footer>
     <!-- ? ---------------------------------------------    tous les logos en svg à appeler (div display none) ------------------------------>
-    <div class="all-svg-logos">
+    <div class="all-svg">
+        <!-- svg gooey -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="shadowed-goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                        result="goo" />
+                    <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                    <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
+                        result="shadow" />
+                    <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                    <feComposite in2="shadow" in="goo" result="goo" />
+                    <feComposite in2="goo" in="SourceGraphic" result="mix" />
+                </filter>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                        result="goo" />
+                    <feComposite in2="goo" in="SourceGraphic" result="mix" />
+                </filter>
+            </defs>
+        </svg>
+        <!-- svg skills logos -->
         <svg classe="acs-icon">
             <g id="acs-icon">
                 <path class="cls-acs-1" d="M0,0V70.2H72V0ZM5.4,5.4H66.6V64.8H5.4Z" />
@@ -861,11 +898,11 @@
         </svg>
 
     </div>
+
     <!-- ? ---------------------------------------------    SCRIPTS ------------------------------>
     <!-- * Jquery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <!-- * timeline -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- * js -->
     <script src="js/scripts.js"></script>

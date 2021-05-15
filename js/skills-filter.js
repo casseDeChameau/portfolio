@@ -9,6 +9,7 @@ var getFilter = function(category) {
 
 //? on click on any skill logo, apply filter to show project concerned by selected skill(s)
 $(".filters-box .skill").click(function(e) {
+    window.location = 'index.html#portfolio';
     //? add css class on selected skill(s)
     $(event.currentTarget).toggleClass('selected');
     //? toggle check state of hidden checkbox when skill selected 

@@ -3,11 +3,14 @@ let lastScrollY;
 let projectArray = Array.from($('.project'));
 let portfolio = document.querySelector('.portfolio');
 let competencesWrap = document.querySelector('.competences-wrapper');
-let competencesCont = document.querySelector('.competences-container');
-let competences = document.querySelector('.competences');
+let tNavWrap = document.querySelector('.nav__wrapper');
 let timeline = document.querySelector('.timeline');
+let gooey = document.querySelector('.gooey-menu');
+let gooeyCheck = document.querySelector('.gooey-menu-checkbox');
+let gooeyItemArr = document.querySelectorAll('.gooey-menu-item');
+
 // todo: mettre adresse à jour quand sur serveur
-let homePageUrl = 'http://127.0.0.1:5501/';
+let websiteRootUrl = 'http://127.0.0.1:5501';
 
 
 // ! -----------------------    FUNCTIONS
@@ -29,11 +32,10 @@ function showProjectInfosOnMobile() {
 window.addEventListener('scroll', () => {
     let currentScroll = scrollY;
     //! ---------------------------    sur home page
-    if (window.location.href.includes(homePageUrl)) {
+    if (window.location.href.includes(websiteRootUrl + '/index.html')) {
+        console.log('location : ', window.location.href);
         //? comportement de la navbar au scroll up/down
         currentScroll > lastScrollY ? $('.main-nav').addClass('on-scroll') : $('.main-nav').removeClass('on-scroll');
-
-        // console.log(scrollY, $('.competences-wrapper').offset().top);
 
         //? comportement .competences quand arrive à timeline
         //* 1. reduction div compétences 
@@ -42,17 +44,6 @@ window.addEventListener('scroll', () => {
         } else {
             competencesWrap.classList.remove('next-timeline');
         }
-        //* 2. affichage nav timeline
-        if (currentScroll > competencesWrap.getBoundingClientRect().top + 1500) {
-            setTimeout(() => {
-                timeline.classList.add('show-timeline-nav');
-            }, 1000);
-        } else if (currentScroll > competencesWrap.getBoundingClientRect().bottom - window.innerHeight) {
-            timeline.classList.remove('show-timeline-nav');
-        }
-
-
-
 
         //? masque la navbar lorsqu'on est sur la partie gallery
         if (currentScroll > ($('.skills-logos').offset().top - 50)) {
@@ -85,26 +76,33 @@ $('.all-proj').click(() => {
     $('.all-proj').toggleClass('on-click')
 });
 
-//? timeline plugin -  SMOOTH SCROLLING SECTIONS
+//? effet gooey menu
+gooeyCheck.addEventListener('change', (event) => {
 
-$('a[href*=#]:not([href=#])').click(function() {
-    // $('.timeline-plug-in a href').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
-        location.hostname == this.hostname) {
-
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-            $('html,body').animate({
-                // $('.timeline-plug-in').animate({
-                scrollTop: target.offset().top
-            }, 1000);
-            return false;
-        }
+    if (event.target.checked) {
+        //? déplacement du bouton
+        gooey.style.bottom = '100px';
+        gooey.style.left = '100px';
+        gooey.style.animation = 'unset'
+        setTimeout(() => {
+            // ? déploiement des items de contact
+            gooeyItemArr.forEach((item, i) => {
+                let angle = ((3.14 - 6.28) / 2) + ((6.28 / 6) * (i - 1));
+                let cos = Math.cos(angle) * 80;
+                let sin = Math.sin(angle) * 80;
+                item.style.transform = `translate3D(${cos}px, ${sin}px, 0)`
+            });
+        }, 300);
+    } else {
+        // ? depli des items de contact
+        gooeyItemArr.forEach((item, i) => {
+            item.style.transform = `translate3D(0px, 0px, 0)`
+        });
+        //? déplacement du bouton
+        setTimeout(() => {
+            gooey.style.bottom = '20px';
+            gooey.style.left = '20px';
+            gooey.style.animation = '1s ease-in-out infinite alternate gooey-bounce';
+        }, 300);
     }
 });
-// let timelineNavLink = Array.from(document.querySelector('.timeline-plug-in nav a'));
-// console.log(timelineNavLink);
-// $('.timeline-plug-in nav a').click(() => {
-
-// })

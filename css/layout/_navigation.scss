@@ -165,7 +165,92 @@
     }
 }
 
-//* spécifique à la page projet
+// ------------------------------ //
+// ------------------------------ //
+.gooey-menu {
+    //? positionnement
+    position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    left: 20px;
+    @include trans;
+    animation: 1s ease-in-out infinite alternate gooey-bounce;
+    @include flex;
+    filter: drop-shadow(0 0 3px rgba($color: $yellow, $alpha: .7));
+    .gooey-menu-checkbox {
+        display: none;
+    }
+    //? burger stripes
+    .gooey-menu-button {
+        @extend %ball;
+        z-index: 2;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        transition-duration: 400ms;
+        transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+        }
+    }
+    //? configuration origin
+    @extend %goo;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    //? LIENS dévoilés au clic ;  %BALL (voir variables)
+    .gooey-menu-item {
+        @extend %ball;
+        text-decoration: none;
+        &:hover {
+            background: $yellow;
+            color: black;
+        }
+        // ? décalage entre chaque déploiement d'item
+        @for $i from 1 through 7 {
+            $del: $i*.05s;
+            &:nth-child(#{$i}) {
+                transition-duration: .3s;
+                transition-delay: $del;
+            }
+        }
+    }
+}
+
+// ------------------------------ //
+.skills-logos {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    &.on-top {
+        //? ajout d'ombre une fois collé au top pour scroll des projets
+        @include trans;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    }
+    .filters-box {
+        .skills {
+            padding: 0 5rem;
+            background-color: #fff;
+            //? Gestion des boutons .skill (checkbox et svg logo) dans _buttons.scss
+        }
+    }
+    @media screen and (max-width: 992px) {
+        //? pour s'éloigner du burger-icon
+        .filters-box {
+            .skills {
+                padding: 0 3.5rem 0 2rem;
+                .skill-wrapper {
+                    height: 50px;
+                    .skill {
+                        transform: scale(.8);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//* ----------------------        spécifique à la page projet
 .single-project-page {
     .on-project-scroll {
         //? Ajout de l'ombre car l'effet on-scroll annulé
@@ -285,46 +370,6 @@
                 a:before {
                     opacity: 1;
                     @include trans();
-                }
-            }
-        }
-    }
-}
-
-.contact-nav {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    display: none;
-}
-
-.skills-logos {
-    position: -webkit-sticky;
-    position: sticky;
-    z-index: 2;
-    top: 0;
-    &.on-top {
-        //? ajout d'ombre une fois collé au top pour scroll des projets
-        @include trans;
-        box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
-    }
-    .filters-box {
-        .skills {
-            padding: 0 5rem;
-            background-color: #fff;
-            //? Gestion des boutons .skill (checkbox et svg logo) dans _buttons.scss
-        }
-    }
-    @media screen and (max-width: 992px) {
-        //? pour s'éloigner du burger-icon
-        .filters-box {
-            .skills {
-                padding: 0 3.5rem 0 2rem;
-                .skill-wrapper {
-                    height: 50px;
-                    .skill {
-                        transform: scale(.8);
-                    }
                 }
             }
         }

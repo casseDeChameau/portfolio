@@ -102,13 +102,15 @@
                             }
                             @include trans;
                         }
-                        &:hover {
-                            color: $yellow;
-                            text-decoration: none;
-                            @include trans;
-                            .link-info {
-                                @include trans($delay: .2s);
-                                max-width: 10rem;
+                        @media screen and (min-width: 1200px) {
+                            &:hover {
+                                color: $yellow;
+                                text-decoration: none;
+                                @include trans;
+                                .link-info {
+                                    @include trans($delay: .2s);
+                                    max-width: 10rem;
+                                }
                             }
                         }
                     }
